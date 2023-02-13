@@ -40,13 +40,23 @@
   };
 
   # Add stuff for your user as you see fit:
-  programs.neovim.enable = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    plugins = [ vimPlugins.nvim-treesitter ];
+    extreaConfig = lib.fileContents /home/z4/.config/nvim/init.lua;
+  };
+
   programs.zsh {
     oh-my-zsh {
       enable = true;
-      plugins = { "git" }
+      plugins = { "git" "zsh-autosuggestions" "zsh-syntax-highlighting" }
     }
   }
+  programs = {
+        rofi.enable = true;
+        kitty.enable = true;
+      }
   # home.packages = with pkgs; [ steam ];
 
   # Enable home-manager and git
