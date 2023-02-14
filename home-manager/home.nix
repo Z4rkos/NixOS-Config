@@ -15,7 +15,8 @@
     # You can add overlays here
     overlays = [
       # If you want to use overlays exported from other flakes:
-      neovim-nightly-overlay.overlays.default
+      #neovim-nightly-overlay.overlays.default
+      #rust-overlay.overlays.default
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -39,25 +40,50 @@
     homeDirectory = "/home/z4";
   };
 
-  # Add stuff for your user as you see fit:
-  programs.neovim = {
+  /* # Add stuff for your user as you see fit: */
+  /* programs.neovim = { */
+  /*   enable = true; */
+  /*   #defaultEditor = true; */
+  /*   plugins = with pkgs.vimPlugins; [ nvim-treesitter ]; */
+  /*   #extraConfig = lib.fileContents /home/z4/.config/nvim/init.lua; */
+
+  /* }; */
+
+  xdg.configFile.nvim.source = ~/nix-config/home-manager/config_files/nvim;
+
+  programs.zsh = {
     enable = true;
-    defaultEditor = true;
-    plugins = [ vimPlugins.nvim-treesitter ];
-    extreaConfig = lib.fileContents /home/z4/.config/nvim/init.lua;
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [ 
+
+      ];
+    };
   };
 
-  programs.zsh {
-    oh-my-zsh {
-      enable = true;
-      plugins = { "git" "zsh-autosuggestions" "zsh-syntax-highlighting" }
-    }
-  }
-  programs = {
-        rofi.enable = true;
-        kitty.enable = true;
-      }
-  # home.packages = with pkgs; [ steam ];
+ # programs.kitty = {
+ #   enable = true;
+ #   settings = {
+ #     scrollback_lines = 10000;
+ #     font_size = 14;
+ #     background_opacity = "0.90";
+ #     input_delay = 3;
+ #   };   
+ # };
+
+  home.packages = with pkgs; [ 
+        steam 
+        polybar
+        rofi
+        polybar
+        kitty
+        feh
+        nix-zsh-completions
+        zsh-syntax-highlighting
+  ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

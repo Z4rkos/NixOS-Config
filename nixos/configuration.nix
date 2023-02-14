@@ -11,6 +11,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./fonts.nix
     ];
 
   # Bootloader.
@@ -75,6 +76,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.z4 = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     description = "Sokrates";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
@@ -114,8 +116,12 @@
     wget
     git
     firefox
-    kitty
     bspwm
+    xdotool
+    rustc
+    rustup
+    cargo
+    picom
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -128,7 +134,7 @@
 
   # List services that you want to enable:
 
-  services.picom.enable = true;
+  #services.picom.enable = true;
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
