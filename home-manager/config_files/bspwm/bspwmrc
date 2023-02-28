@@ -1,0 +1,18 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p bash
+
+BSPWM=/home/z4/.config/bspwm
+
+# --- General configs and launchin of stuff ---
+$BSPWM/general_setup.sh &
+$BSPWM/rules.sh &
+$BSPWM/themes/gruvbox.sh &
+
+
+# --- Window Stuff ---
+bspc config window_gap          8
+# bspc config top_padding         15
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+

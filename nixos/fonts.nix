@@ -1,17 +1,20 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             nerdfonts
             jetbrains-mono
             font-awesome
-            fire-code
+            fira-code
             fira-code-symbols
+            waffle
+            terminus_font
         ];
 
-        fonts.font = with pkgs; [
-            nerdfonts
+        fonts.fonts = with pkgs; [
             (nerdfonts.override { fonts = ["JetBrainsMono"]; })
             font-awesome
-            fire-code
+            fira-code
             fira-code-symbols
+            waffle
+            terminus_font
         ];
     }

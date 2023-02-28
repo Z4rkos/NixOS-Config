@@ -23,6 +23,13 @@
       fsType = "vfat";
     };
 
+#  fileSystems."/mnt/ssd" =
+#    #{
+#        #device = "/dev/sda3";
+#        #fsType = "ext4";
+#        #options = ["auto nofail noatime rw user"];
+#    #};
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/ca02b9b8-c7eb-4310-a9c1-1c19e6d1a48d"; }
     ];

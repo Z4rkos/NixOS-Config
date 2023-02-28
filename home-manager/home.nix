@@ -49,7 +49,15 @@
 
   /* }; */
 
-  xdg.configFile.nvim.source = ~/nix-config/home-manager/config_files/nvim;
+  home.file =  {
+        ".config/bspwm".source = ~/nix-config/home-manager/config_files/bspwm;
+        ".config/picom.conf".source = ~/nix-config/home-manager/config_files/picom.conf;
+        ".config/nvim".source = ~/nix-config/home-manager/config_files/nvim;
+        ".config/kitty".source = ~/nix-config/home-manager/config_files/kitty;
+        ".config/sxhkd".source = ~/nix-config/home-manager/config_files/sxhkd;
+        ".config/polybar".source = ~/nix-config/home-manager/config_files/polybar;
+        ".config/rofi".source = ~/nix-config/home-manager/config_files/rofi;
+    };
 
   programs.zsh = {
     enable = true;
@@ -64,25 +72,21 @@
     };
   };
 
- # programs.kitty = {
- #   enable = true;
- #   settings = {
- #     scrollback_lines = 10000;
- #     font_size = 14;
- #     background_opacity = "0.90";
- #     input_delay = 3;
- #   };   
- # };
-
   home.packages = with pkgs; [ 
         steam 
-        polybar
+        lutris
         rofi
         polybar
         kitty
         feh
+        python311
+        lua
         nix-zsh-completions
         zsh-syntax-highlighting
+        spotify
+        obsidian
+        networkmanagerapplet
+        ripgrep
   ];
 
   # Enable home-manager and git

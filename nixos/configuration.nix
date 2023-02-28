@@ -45,9 +45,9 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
+    layout = "us,no";
     xkbVariant = "";
-    xkbOptions = "caps,esc";
+    xkbOptions = "grp:rctrl_rshift_toggle";
   };
 
   # Enable CUPS to print documents.
@@ -55,10 +55,10 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = false;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -78,11 +78,8 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Sokrates";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
     packages = with pkgs; [
-      firefox
-      kate
-    #  thunderbird
     ];
   };
 
@@ -108,11 +105,12 @@
     # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
     intelBusId = "PCI:00:02:0";
   };
-
+  hardware.opengl.driSupport32Bit = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
+    sxhkd
     wget
     git
     firefox
@@ -122,6 +120,10 @@
     rustup
     cargo
     picom
+    killall
+    gnome.gnome-keyring # Required to make NetworkManager remember passwords...
+    libsecret
+    xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
