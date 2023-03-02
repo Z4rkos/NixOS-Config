@@ -50,12 +50,12 @@
   /* }; */
 
   home.file =  {
-        ".config/bspwm".source = ~/nix-config/home-manager/config_files/bspwm;
+        ".config/bspwm".source = config.lib.file.mkOutOfStoreSymlink ./config_files/bspwm;
+        ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink ./config_files/polybar;
         ".config/picom.conf".source = ~/nix-config/home-manager/config_files/picom.conf;
         ".config/nvim".source = ~/nix-config/home-manager/config_files/nvim;
         ".config/kitty".source = ~/nix-config/home-manager/config_files/kitty;
         ".config/sxhkd".source = ~/nix-config/home-manager/config_files/sxhkd;
-        ".config/polybar".source = ~/nix-config/home-manager/config_files/polybar;
         ".config/rofi".source = ~/nix-config/home-manager/config_files/rofi;
     };
 
@@ -63,6 +63,10 @@
     enable = true;
     enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
+    shellAliases = {
+        options =  "firefox https://search.nixos.org/options";
+        packages = "firefox https://search.nixos.org/packages";
+    };
     initExtra = "export PATH=$PATH:/home/z4/bin";
     oh-my-zsh = {
       enable = true;
@@ -90,6 +94,7 @@
         ripgrep
         flameshot
         xwallpaper
+        btop
   ];
 
   # Enable home-manager and git
