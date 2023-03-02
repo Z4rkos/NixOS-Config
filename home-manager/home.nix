@@ -34,7 +34,7 @@
     };
   };
 
-  # TODO: Set your username
+  # TODO: Set yourusername
   home = {
     username = "z4";
     homeDirectory = "/home/z4";
@@ -63,6 +63,7 @@
     enable = true;
     enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
+    initExtra = "export PATH=$PATH:/home/z4/bin";
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
@@ -87,6 +88,8 @@
         obsidian
         networkmanagerapplet
         ripgrep
+        flameshot
+        xwallpaper
   ];
 
   # Enable home-manager and git

@@ -16,5 +16,5 @@ bspc config border_width 2
 echo "gruvbox" > /home/z4/.current_theme 
 
 # --- Wallpaper and Color stuffs ---
-feh --bg-max /home/z4/pictures/abstract_sun.jpg
+xwallpaper --center /home/z4/pictures/abstract_sun.jpg
 

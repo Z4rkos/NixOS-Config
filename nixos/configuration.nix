@@ -11,6 +11,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./nvidia.nix
       ./fonts.nix
     ];
 
@@ -87,24 +88,24 @@
   nixpkgs.config.allowUnfree = true;
 
   
-  services.xserver.videoDrivers = [ "nvidia" ];
-  #hardware.nvidia.package = [ "nvidia_drm" ];
-  #hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.nvidiaSettings = true;
-  #hardware.opengl.enable = true;
-  # boot.kernelParams = [ "module_blacklist=i915" ];
-  #boot.extraModprobeConfig = ''
-  #      options bbswitch load_state=-1 unload_state=1 nvidia-drm nvidia-uvm
-  #    '';
-  hardware.nvidia.prime = {
-    sync.enable = true;
+  /* services.xserver.videoDrivers = [ "nvidia" ]; */
+  /* #hardware.nvidia.package = [ "nvidia_drm" ]; */
+  /* #hardware.nvidia.modesetting.enable = true; */
+  /* hardware.nvidia.nvidiaSettings = true; */
+  /* #hardware.opengl.enable = true; */
+  /* # boot.kernelParams = [ "module_blacklist=i915" ]; */
+  /* #boot.extraModprobeConfig = '' */
+  /* #      options bbswitch load_state=-1 unload_state=1 nvidia-drm nvidia-uvm */
+  /* #    ''; */
+  /* hardware.nvidia.prime = { */
+  /*   sync.enable = true; */
 
-    # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
-    nvidiaBusId = "PCI:01:00:0";
+  /*   # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA */
+  /*   nvidiaBusId = "PCI:01:00:0"; */
 
-    # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
-    intelBusId = "PCI:00:02:0";
-  };
+  /*   # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA */
+  /*   intelBusId = "PCI:00:02:0"; */
+  /* }; */
   hardware.opengl.driSupport32Bit = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -152,6 +153,12 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  security.sudo.extraRules = [
+      {
+        groups = [ "wheel" ];
+        commands = [ { command = "ALL"; options = [ "NOPASSWD" ]; } ];
+      }
+  ];
   system.stateVersion = "22.11"; # Did you read the comment?
 
 }
