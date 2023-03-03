@@ -21,6 +21,7 @@ in
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./dotfiles
   ];
 
   /* let */
@@ -73,16 +74,16 @@ in
 
 
 
-  home.file =  {
-        ".config/bspwm".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/bspwm;
-        ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/polybar;
-        ".config/eww".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/polybar;
-        ".config/picom.conf".source = ~/nix-config/home-manager/dotfiles/picom.conf;
-        ".config/nvim".source = ~/nix-config/home-manager/dotfiles/nvim;
-        ".config/kitty".source = ~/nix-config/home-manager/dotfiles/kitty;
-        ".config/sxhkd".source = ~/nix-config/home-manager/dotfiles/sxhkd;
-        ".config/rofi".source = ~/nix-config/home-manager/dotfiles/rofi;
-  };
+  /* home.file =  { */
+  /*       ".config/bspwm".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/bspwm; */
+  /*       ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/polybar; */
+  /*       ".config/eww".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/polybar; */
+  /*       ".config/picom.conf".source = ~/nix-config/home-manager/dotfiles/picom.conf; */
+  /*       ".config/nvim".source = ~/nix-config/home-manager/dotfiles/nvim; */
+  /*       ".config/kitty".source = ~/nix-config/home-manager/dotfiles/kitty; */
+  /*       ".config/sxhkd".source = ~/nix-config/home-manager/dotfiles/sxhkd; */
+  /*       ".config/rofi".source = ~/nix-config/home-manager/dotfiles/rofi; */
+  /* }; */
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
