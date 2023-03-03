@@ -40,7 +40,10 @@
   services.xserver = {
     enable = true;
     windowManager.bspwm.enable = true;
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+    };
+    #displayManager.defaultSession = "none+bspwm";
   };
 
 
@@ -112,10 +115,10 @@
   environment.systemPackages = with pkgs; [
     neovim
     sxhkd
+    bspwm
     wget
     git
     firefox
-    bspwm
     xdotool
     rustc
     rustup

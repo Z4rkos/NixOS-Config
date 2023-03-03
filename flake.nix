@@ -10,6 +10,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 #    rust-overlay.url = "github:oxalica/rust-overlay";
@@ -18,7 +20,7 @@
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, unstable, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, unstable, nix-doom-emacs, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
