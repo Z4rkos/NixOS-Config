@@ -20,7 +20,7 @@
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, unstable, nix-doom-emacs, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, unstable, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {

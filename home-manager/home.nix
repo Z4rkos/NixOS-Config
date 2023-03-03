@@ -1,7 +1,19 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }:
+let
+  confDirectory = "/home/z4/nix-config/home-manager/dotfiles/";
+  files = builtins.readDir confDirectory;
+in
+{
+  /* home.file = builtins.mapAttrs (name: file: { */
+  /*   ".config/${name}" = config.lib.file.mkOutOfStoreSymlink "${confDirectory}/${name}"; */
+  /* }) files; */
+  
+  # Add other configuration options here
+  # Add other configuration options her
+
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -10,6 +22,16 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
   ];
+
+  /* let */
+  /*   storeLink = config.lib.file.mkOutOfStoreSymlink; */
+  /*   conf_path = "/home/z4/nix-config/home-manager/dotfiles/"; */
+  /*   files = builtins.lsAttrs conf_path; */
+  /* in */ 
+  /*   home.file = mapAttrs (name: path: { */
+  /*     ".config/${name}".source = storeLink "${conf_path}/${path}"; */
+  /*   }) files; */
+
 
   nixpkgs = {
     # You can add overlays here
@@ -49,16 +71,18 @@
 
   /* }; */
 
-  home.file =  {
-        ".config/bspwm".source = config.lib.file.mkOutOfStoreSymlink ./config_files/bspwm;
-        ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink ./config_files/polybar;
-        ".config/picom.conf".source = ~/nix-config/home-manager/config_files/picom.conf;
-        ".config/nvim".source = ~/nix-config/home-manager/config_files/nvim;
-        ".config/kitty".source = ~/nix-config/home-manager/config_files/kitty;
-        ".config/sxhkd".source = ~/nix-config/home-manager/config_files/sxhkd;
-        ".config/rofi".source = ~/nix-config/home-manager/config_files/rofi;
-    };
 
+
+  home.file =  {
+        ".config/bspwm".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/bspwm;
+        ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/polybar;
+        ".config/eww".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/polybar;
+        ".config/picom.conf".source = ~/nix-config/home-manager/dotfiles/picom.conf;
+        ".config/nvim".source = ~/nix-config/home-manager/dotfiles/nvim;
+        ".config/kitty".source = ~/nix-config/home-manager/dotfiles/kitty;
+        ".config/sxhkd".source = ~/nix-config/home-manager/dotfiles/sxhkd;
+        ".config/rofi".source = ~/nix-config/home-manager/dotfiles/rofi;
+  };
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -95,6 +119,8 @@
         flameshot
         xwallpaper
         btop
+        emacs
+        eww
   ];
 
   # Enable home-manager and git
