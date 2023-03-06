@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /home/z4/nix-config/
+sudo nixos-rebuild switch --upgrade --flake .#nixos

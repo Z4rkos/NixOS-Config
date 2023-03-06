@@ -1,0 +1,38 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p bash
+
+
+
+ACTIVE_WINDOW=$(xdotool getactivewindow)
+ACTIVE_WM_CLASS=$(xprop -id $ACTIVE_WINDOW | grep WM_CLASS)
+if [[ $ACTIVE_WM_CLASS == *"kitty"* ]]
+then
+    # Get PID. If _NET_WM_PID isn't set, bail.
+    PID=$(xprop -id $ACTIVE_WINDOW | grep _NET_WM_PID | grep -oP "\d+")
+    if [[ "$PID" == "" ]]
+    then
+        kitty
+    fi
+    # Gets the terminal childred
+    CHILDREN_PID=$(pgrep -P $PID)
+
+    echo "Childred PID = $CHILDREN_PID"
+    # Gets the shell PID which is the second child in kittys case.
+    SHELL_PID=$(echo $CHILDREN_PID | cut -f 2 -d " ")
+    echo "SHELL_PID = $SHELL_PID"
+
+    if [[ "$PID" == "" ]]
+    then
+        kitty
+    fi
+
+    # Get current directory of child.
+    pushd "/proc/${SHELL_PID}/cwd"
+    SHELL_CWD=$(pwd -P)
+    popd
+    # Start kitty with the working directory
+    kitty --working-directory $SHELL_CWD
+else
+    kitty
+fi
+

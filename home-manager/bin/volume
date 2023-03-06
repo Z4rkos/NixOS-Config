@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+
+# Check for arguments
+if [[ $# -eq 0 ]]; then
+  current_volume=$(pactl list sinks | grep -A 15 'Sink #' | grep 'Volume:' | head -n 1 | awk '{print $5}')
+  echo $current_volume
+elif [[ $# -eq 2 && $1 == "up" ]]; then
+  pactl set-sink-volume @DEFAULT_SINK@ +${2}%
+  current_volume=$(pactl list sinks | grep -A 15 'Sink #' | grep 'Volume:' | head -n 1 | awk '{print $5}')
+  echo $current_volume
+elif [[ $# -eq 2 && $1 == "down" ]]; then
+  # Decrease volume
+  pactl set-sink-volume @DEFAULT_SINK@ -${2}%
+  current_volume=$(pactl list sinks | grep -A 15 'Sink #' | grep 'Volume:' | head -n 1 | awk '{print $5}')
+  echo $current_volume
+else
+  echo "Invalid arguments"
+fi
+

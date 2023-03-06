@@ -12,8 +12,8 @@ super + u
 super + Return
 	/home/z4/bin/spawm-kitty-cwd
 
-# super + t
-# 	kitty
+super + {Up,Down}
+	/home/z4/bin/volume {up,down} 5
 
 # program launcher
 super + @space
