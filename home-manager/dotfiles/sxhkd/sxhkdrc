@@ -17,7 +17,7 @@ super + {Up,Down}
 
 # program launcher
 super + @space
-    rofi -show drun -icon-theme "Papirus" -show-icons
+    rofi -show run -icon-theme "Papirus" -show-icons
 
 # Get running programs
 alt + Tab
