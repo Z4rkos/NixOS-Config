@@ -3,7 +3,8 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      #hardware.nvidia.modesetting.enable = true;
+      /* open = true; */
+      modesetting.enable = false;
       nvidiaSettings = true;
       #hardware.opengl.enable = true;
       # boot.kernelParams = [ "module_blacklist=i915" ];

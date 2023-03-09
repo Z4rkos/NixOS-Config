@@ -12,8 +12,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./nvidia.nix
+      /* ./xorg.nix */
       ./fonts.nix
     ];
+  virtualisation.vmware.host.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -36,23 +38,42 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
+  /* # Enable the X11 windowing system. */
   services.xserver = {
     enable = true;
     windowManager.bspwm.enable = true;
     displayManager.sddm = {
       enable = true;
     };
-    #displayManager.defaultSession = "none+bspwm";
-  };
-
-
-  # Configure keymap in X11
-  services.xserver = {
     layout = "us,no";
     xkbVariant = "";
     xkbOptions = "grp:rctrl_rshift_toggle";
   };
+
+  /* services.xserver = { */
+  /*   enable = true; */
+  /*   windowManager.bspwm.enable = true; */
+  /*   displayManager.sddm = { */
+  /*     enable = true; */
+  /*   }; */
+  /*   config = '' */
+  /*     Section "Device" */
+  /*       Option         "TripleBuffer" "on" */
+  /*       Option         "Coolbits" "28" */
+  /*     EndSection */
+
+  /*     Section "Screen" */
+  /*       Option         "metamodes" "nvidia-auto-select +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}" */
+  /*       Option         "AllowIndirectGLXProtocol" "off" */
+
+  /*     Section "Extensions" */
+  /*       Option         "Composite" "Disable" */
+  /*     EndSection */
+  /*   ''; */
+  /*   layout = "us,no"; */
+  /*   xkbVariant = ""; */
+  /*   xkbOptions = "grp:rctrl_rshift_toggle"; */
+  /* }; */
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -118,16 +139,14 @@
     bspwm
     wget
     git
-    firefox
     xdotool
-    rustc
-    rustup
-    cargo
     picom
     killall
     gnome.gnome-keyring # Required to make NetworkManager remember passwords...
     libsecret
-    xclip
+    rustc # Store collision if i put this in home-manager instead. Too lazy to fix it atm.
+    rustup
+    cargo
   ];
 
   services.gnome.gnome-keyring.enable = true;

@@ -28,39 +28,40 @@ in
       EDITOR = "nvim";
     };
     sessionPath = ["${binDirectory}"]; # Put my bin in PATH
-    file."bin".source = storeLink binDirectory;
+    file."bin".source = storeLink binDirectory; # Symlink that shizzle between store, here, and home.
   };
 
   home.packages = with pkgs; [ 
-        rofi
-        vimHugeX
-        polybar
-        kitty
-        feh
-        python311
-        lua
-        nix-zsh-completions
-        zsh-syntax-highlighting
-        spotify
-        obsidian
-        networkmanagerapplet
-        ripgrep
-        flameshot
-        xwallpaper
-        btop
-        emacs
-        eww
-        dunst
-        ranger
-        links2
-        vmware-workstation
+    rofi
+    vimHugeX
+    polybar
+    kitty
+    feh
+    python311
+    lua
+    nix-zsh-completions
+    zsh-syntax-highlighting
+    spotify
+    obsidian networkmanagerapplet
+    ripgrep
+    flameshot
+    xwallpaper
+    btop
+    emacs
+    eww
+    dunst
+    ranger
+    links2
+    vmware-workstation
+    xclip
+    firefox
   ];
 
 
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  # Nicely reload system units when changing configs
+  # Reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
