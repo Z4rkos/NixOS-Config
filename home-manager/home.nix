@@ -37,7 +37,6 @@ in
     polybar
     kitty
     feh
-    python311
     lua
     nix-zsh-completions
     zsh-syntax-highlighting
@@ -55,6 +54,8 @@ in
     vmware-workstation
     xclip
     firefox
+    discord
+    nodejs
   ];
 
 

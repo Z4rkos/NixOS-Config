@@ -12,7 +12,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./nvidia.nix
-      /* ./xorg.nix */
+      ./xorg.nix
       ./fonts.nix
     ];
   virtualisation.vmware.host.enable = true;
@@ -39,16 +39,16 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   /* # Enable the X11 windowing system. */
-  services.xserver = {
-    enable = true;
-    windowManager.bspwm.enable = true;
-    displayManager.sddm = {
-      enable = true;
-    };
-    layout = "us,no";
-    xkbVariant = "";
-    xkbOptions = "grp:rctrl_rshift_toggle";
-  };
+  /* services.xserver = { */
+  /*   enable = true; */
+  /*   windowManager.bspwm.enable = true; */
+  /*   displayManager.sddm = { */
+  /*     enable = true; */
+  /*   }; */
+  /*   layout = "us,no"; */
+  /*   xkbVariant = ""; */
+  /*   xkbOptions = "grp:rctrl_rshift_toggle"; */
+  /* }; */
 
   /* services.xserver = { */
   /*   enable = true; */
@@ -147,6 +147,7 @@
     rustc # Store collision if i put this in home-manager instead. Too lazy to fix it atm.
     rustup
     cargo
+    ntfs3g # So I can mount ntfs
   ];
 
   services.gnome.gnome-keyring.enable = true;

@@ -23,9 +23,15 @@
       fsType = "vfat";
     };
 
-  fileSystems."/mnt/ssd" =
+  fileSystems."/mnt/arch" =
     { device = "/dev/disk/by-uuid/e7c53fe7-d755-42ea-b023-a30d8c84bdf9";
       fsType = "ext4";
+    };
+
+  fileSystems."/mnt/ssd" =
+    { device = "/mnt/arch";
+      fsType = "none";
+      options = [ "bind" ];
     };
 
   swapDevices =
@@ -38,6 +44,8 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.vmnet1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.vmnet8.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
