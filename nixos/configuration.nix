@@ -16,6 +16,7 @@
       ./fonts.nix
     ];
   virtualisation.vmware.host.enable = true;
+  virtualisation.docker.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -103,7 +104,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Sokrates";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
     packages = with pkgs; [
     ];
   };

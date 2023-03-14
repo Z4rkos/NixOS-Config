@@ -1,12 +1,14 @@
 { inputs, lib, config, pkgs, ... }: 
   let
-    pythonPackages = with pkgs.python310Packages; [
+    pythonPackages = p: with p; [
       pip
       flake8
+      openai
+      requests
       ];
   in
   {
     home.packages = with pkgs; [
-      python311
-    ] ++ pythonPackages;
+      (python3.withPackages pythonPackages)
+    ];
 }

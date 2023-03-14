@@ -28,7 +28,7 @@ in
       EDITOR = "nvim";
     };
     sessionPath = ["${binDirectory}"]; # Put my bin in PATH
-    file."bin".source = storeLink binDirectory; # Symlink that shizzle between store, here, and home.
+    file."bin".source = storeLink /home/z4/nix-config/home-manager/bin; # Symlink that shizzle between store, here, and home.
   };
 
   home.packages = with pkgs; [ 
@@ -56,6 +56,7 @@ in
     firefox
     discord
     nodejs
+    /nix/store/aad0frfq068isljnw0bzw5rzvsdymnzz-gpt-0.5
   ];
 
 
