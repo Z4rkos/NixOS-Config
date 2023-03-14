@@ -1,7 +1,0 @@
-/* exports a subset of our pcss variables to make it consumable from js */
-:export {
-    tableOverlayHeatmapFromColor: $tableOverlayHeatmapFromColor;
-    tableOverlayHeatmapToColor: $tableOverlayHeatmapToColor;
-    tableOverlayHighLowMinColor: $tableOverlayHighLowMinColor;
-    tableOverlayHighLowMaxColor: $tableOverlayHighLowMaxColor;
-}

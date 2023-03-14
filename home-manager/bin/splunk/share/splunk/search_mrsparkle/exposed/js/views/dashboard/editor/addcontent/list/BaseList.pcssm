@@ -1,7 +1,0 @@
-.list {
-    margin-top: 1px;
-
-    :global .accordion-toggle {
-        padding-left: 20px;
-    }
-}

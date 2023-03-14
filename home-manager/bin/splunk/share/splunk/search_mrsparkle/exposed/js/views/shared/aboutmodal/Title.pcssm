@@ -1,4 +1,0 @@
-.view {
-    composes: title from '../ModalLocalClassNames.pcssm';
-    font-size: $fontSizeXXLarge;
-}
