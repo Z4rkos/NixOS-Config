@@ -4,6 +4,7 @@ font_size 13
 input_delay 3
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
+# Cyberpunk
 include current-theme.conf
 # END_KITTY_THEME
+scrollback_pager bash -c 'vim --not-a-term +"terminal ++curwin cat "<(cat) +"KittyScrollback INPUT_LINE_NUMBER CURSOR_LINE CURSOR_COLUMN"'

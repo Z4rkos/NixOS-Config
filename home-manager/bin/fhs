@@ -1,0 +1,2 @@
+#! /nix/store/zcla0ljiwpg5w8pvfagfjq1y2vasfix5-bash-5.1-p16/bin/bash
+exec /nix/store/i0dmd72ydwv18aqqhy62n77jc4l1cm5s-chrootenv/bin/chrootenv /nix/store/znyvq8cw0m3kb02249irlbah7389iws1-fhs-init "$(pwd)" "$@"

@@ -4,9 +4,20 @@
         nmap
         burpsuite
         thc-hydra
-        /* ghidra */
+        ghidra
+        radare2
+        pwndbg
+        gef
+        gdb
         gobuster
         nikto
         dirb
+        wireshark
+        whois
+        john
+        cyberchef
+        hashcat
+        stegseek
+        stegsolve
     ];
 }

@@ -56,7 +56,12 @@ in
     firefox
     discord
     nodejs
-    /nix/store/aad0frfq068isljnw0bzw5rzvsdymnzz-gpt-0.5
+    zip
+    unzip
+    cmake
+    openssl
+    file
+    cowsay
   ];
 
 

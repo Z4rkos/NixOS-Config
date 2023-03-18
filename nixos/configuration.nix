@@ -149,6 +149,7 @@
     rustup
     cargo
     ntfs3g # So I can mount ntfs
+    glibc
   ];
 
   services.gnome.gnome-keyring.enable = true;

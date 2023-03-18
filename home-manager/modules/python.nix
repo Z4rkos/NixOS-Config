@@ -5,6 +5,7 @@
       flake8
       openai
       requests
+      pwntools
       ];
   in
   {

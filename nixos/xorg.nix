@@ -6,13 +6,13 @@
     displayManager.sddm = {
       enable = true;
     };
-    config = ''
-      Section "Device"
-        Identifier     "Card0"
-        Option         "TripleBuffer" "on"
-        Option         "Coolbits" "28"
-      EndSection
-    '';
+    /* config = '' */
+    /*   Section "Device" */
+    /*     Identifier     "Card0" */
+    /*     Option         "TripleBuffer" "on" */
+    /*     Option         "Coolbits" "28" */
+    /*   EndSection */
+    /* ''; */
     exportConfiguration = false;
     layout = "us,no";
     xkbVariant = "";
