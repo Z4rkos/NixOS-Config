@@ -20,12 +20,10 @@ in
     };
   };
 
-  /* programs.nix-doom-emacs.enable = true; */
 
   home = {
     username = "z4";
     homeDirectory = "/home/z4";
-    /* modules = [ doom-emacs.hmModule ]; */
 
     sessionVariables = {
       EDITOR = "nvim";

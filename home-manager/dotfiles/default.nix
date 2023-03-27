@@ -21,7 +21,7 @@
         ".config/sxhkd".source = storeLink /home/z4/nix-config/home-manager/dotfiles/sxhkd;
         ".config/rofi".source = storeLink /home/z4/nix-config/home-manager/dotfiles/rofi;
         ".config/conky".source = storeLink /home/z4/nix-config/home-manager/dotfiles/conky;
-
         ".config/hypr".source = storeLink /home/z4/nix-config/home-manager/dotfiles/hypr;
+        ".config/sx".source = storeLink /home/z4/nix-config/home-manager/dotfiles/sx;
       };
     }

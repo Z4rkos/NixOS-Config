@@ -14,9 +14,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./xorg
       ./nvidia.nix
       ./fonts.nix
-      ./xorg
       ./hyprland.nix
     ];
   virtualisation.vmware.host.enable = true;

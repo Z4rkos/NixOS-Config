@@ -3,20 +3,26 @@
   services.xserver = {
     enable = true;
     windowManager.bspwm.enable = true;
-    displayManager.sddm = {
+    displayManager.sx = {
       enable = true;
     };
-    /* config = '' */
-    /*   Section "Device" */
-    /*     Identifier     "Card0" */
-    /*     Option         "TripleBuffer" "on" */
-    /*     Option         "Coolbits" "28" */
-    /*   EndSection */
-    /* ''; */
-    exportConfiguration = false;
+    autorun = false;
+    exportConfiguration = true;
     layout = "us,no";
     xkbVariant = "";
     xkbOptions = "grp:rctrl_rshift_toggle";
+
+    /* config = '' */
+    /*   Section "Monitor" */
+    /*       Identifier "eDP-1-1" */
+    /*       Option "Primary" "true" */
+    /*   EndSection */
+
+    /*   Section "Monitor" */
+    /*       Identifier "HDMI-0" */
+    /*       Option "RightOf" "eDP-1-1" */
+    /*   EndSection */
+    /* ''; */
   };
 }
       /* Section "Screen" */
