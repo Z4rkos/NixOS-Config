@@ -5,9 +5,11 @@
     storeLink = config.lib.file.mkOutOfStoreSymlink;
   in
     {
-  /* xdg.configFile = builtins.mapAttrs (name: file: { */
-  /*   source = storeLink "${dotfilesDir}/${name}"; */
-  /* }) files; */
+    /* xdg.configFile = builtins.mapAttrs (name: file: { */
+    /*   source = storeLink "${dotfilesDir}/${name}"; */
+    /* }) files; */
+
+      imports = [ ./doom-emacs ];
 
       home.file =  {
         ".config/bspwm".source = storeLink /home/z4/nix-config/home-manager/dotfiles/bspwm;
@@ -18,5 +20,8 @@
         ".config/kitty".source = storeLink /home/z4/nix-config/home-manager/dotfiles/kitty;
         ".config/sxhkd".source = storeLink /home/z4/nix-config/home-manager/dotfiles/sxhkd;
         ".config/rofi".source = storeLink /home/z4/nix-config/home-manager/dotfiles/rofi;
+        ".config/conky".source = storeLink /home/z4/nix-config/home-manager/dotfiles/conky;
+
+        ".config/hypr".source = storeLink /home/z4/nix-config/home-manager/dotfiles/hypr;
       };
     }

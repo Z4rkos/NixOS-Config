@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, unstable, ... }:
+{ inputs, lib, config, pkgs, ... }:
 let
   binDirectory = /home/z4/nix-config/home-manager/bin;
   storeLink = config.lib.file.mkOutOfStoreSymlink;
@@ -20,9 +20,12 @@ in
     };
   };
 
+  /* programs.nix-doom-emacs.enable = true; */
+
   home = {
     username = "z4";
     homeDirectory = "/home/z4";
+    /* modules = [ doom-emacs.hmModule ]; */
 
     sessionVariables = {
       EDITOR = "nvim";
@@ -46,7 +49,6 @@ in
     flameshot
     xwallpaper
     btop
-    emacs
     eww
     dunst
     ranger
@@ -62,6 +64,22 @@ in
     openssl
     file
     cowsay
+    libmysqlclient
+    gimp
+    distrobox
+    openvpn
+    p7zip
+    unrar
+    rarcrack
+    dig
+    powershell
+    php
+    vlc
+    node2nix
+    conky
+    neofetch
+    libreoffice-qt
+    mlocate
   ];
 
 

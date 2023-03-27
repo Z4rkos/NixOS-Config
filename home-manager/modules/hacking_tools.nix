@@ -19,5 +19,15 @@
         hashcat
         stegseek
         stegsolve
+        sleuthkit
+        foremost
+        pdf-parser
+        exiftool
+        dcfldd
+        wpscan
+        netdiscover
+        sqlmap
+        jwt-hack
+        hash-identifier
     ];
 }

@@ -6,6 +6,8 @@
       openai
       requests
       pwntools
+      termcolor
+      pyjwt
       ];
   in
   {

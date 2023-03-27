@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }: {
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  /* boot.extraModprobeConfig = '' */
+  /*       options bbswitch load_state=-1 unload_state=1 nvidia-drm nvidia-uvm */
+  /*     ''; */
+
   hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
       /* open = true; */
@@ -8,9 +12,6 @@
       nvidiaSettings = true;
       #hardware.opengl.enable = true;
       # boot.kernelParams = [ "module_blacklist=i915" ];
-      #boot.extraModprobeConfig = ''
-      #      options bbswitch load_state=-1 unload_state=1 nvidia-drm nvidia-uvm
-      #    '';
       prime = {
         sync.enable = true;
 

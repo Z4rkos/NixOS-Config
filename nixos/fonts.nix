@@ -10,11 +10,12 @@
         ];
 
         fonts.fonts = with pkgs; [
-            (nerdfonts.override { fonts = ["JetBrainsMono"]; })
-            font-awesome
+            font-awesome_5
             fira-code
             fira-code-symbols
             waffle
             terminus_font
+            nerdfonts
+            /* (nerdfonts.override { fonts = ["JetBrainsMono"]; }) */
         ];
     }

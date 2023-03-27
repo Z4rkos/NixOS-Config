@@ -6,7 +6,7 @@ BSPWM=/home/z4/.config/bspwm
 # --- General configs and launchin of stuff ---
 $BSPWM/general_setup.sh &
 $BSPWM/rules.sh &
-$BSPWM/themes/gruvbox.sh &
+$BSPWM/themes/spaceduck.sh &
 
 
 # --- Window Stuff ---

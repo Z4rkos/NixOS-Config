@@ -2,18 +2,22 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }: {
+{ config, lib, pkgs, specialArgs, ... }: {
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
+
 
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./nvidia.nix
-      ./xorg.nix
       ./fonts.nix
+      ./xorg
+      ./hyprland.nix
     ];
   virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
@@ -23,7 +27,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "plato"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -113,24 +117,6 @@
   nixpkgs.config.allowUnfree = true;
 
   
-  /* services.xserver.videoDrivers = [ "nvidia" ]; */
-  /* #hardware.nvidia.package = [ "nvidia_drm" ]; */
-  /* #hardware.nvidia.modesetting.enable = true; */
-  /* hardware.nvidia.nvidiaSettings = true; */
-  /* #hardware.opengl.enable = true; */
-  /* # boot.kernelParams = [ "module_blacklist=i915" ]; */
-  /* #boot.extraModprobeConfig = '' */
-  /* #      options bbswitch load_state=-1 unload_state=1 nvidia-drm nvidia-uvm */
-  /* #    ''; */
-  /* hardware.nvidia.prime = { */
-  /*   sync.enable = true; */
-
-  /*   # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA */
-  /*   nvidiaBusId = "PCI:01:00:0"; */
-
-  /*   # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA */
-  /*   intelBusId = "PCI:00:02:0"; */
-  /* }; */
   hardware.opengl.driSupport32Bit = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -168,10 +154,10 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  /* networking.firewall.allowedTCPPorts = [ 8000 9997 ]; */
+  /* networking.firewall.allowedUDPPorts = [ 9669 9997 ]; */
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

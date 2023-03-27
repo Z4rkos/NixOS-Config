@@ -1,4 +1,5 @@
 # bspc rule -a KSP.x86_64 state=fullscreen
+bspc rule -a conky state=floating border=off
 bspc rule -a updater state=floating rectangle=450x450+0+0 center=on border=off
 bspc rule -a theme_selector state=floating rectangle=450x350+0+0 center=on border=off
 bspc rule -a Gimp state=floating
