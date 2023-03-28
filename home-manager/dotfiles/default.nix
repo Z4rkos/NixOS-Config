@@ -12,6 +12,7 @@
       imports = [ ./doom-emacs ];
 
       home.file =  {
+        # Dotfiles I change alot is managed non-atoically.
         ".config/bspwm".source = storeLink /home/z4/nix-config/home-manager/dotfiles/bspwm;
         ".config/polybar".source = storeLink /home/z4/nix-config/home-manager/dotfiles/polybar;
         ".config/eww".source = storeLink /home/z4/nix-config/home-manager/dotfiles/polybar;
@@ -22,6 +23,7 @@
         ".config/rofi".source = storeLink /home/z4/nix-config/home-manager/dotfiles/rofi;
         ".config/conky".source = storeLink /home/z4/nix-config/home-manager/dotfiles/conky;
         ".config/hypr".source = storeLink /home/z4/nix-config/home-manager/dotfiles/hypr;
-        ".config/sx".source = storeLink /home/z4/nix-config/home-manager/dotfiles/sx;
+
+        ".config/sx".source = /home/z4/nix-config/home-manager/dotfiles/sx;
       };
     }

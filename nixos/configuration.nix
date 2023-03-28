@@ -14,10 +14,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./xorg
-      ./nvidia.nix
-      ./fonts.nix
-      ./hyprland.nix
+      ./modules
     ];
   virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
