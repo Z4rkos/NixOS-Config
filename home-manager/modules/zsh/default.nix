@@ -2,7 +2,7 @@
   programs.zsh = {
       enable = true;
       initExtra = ''
-        export PATH=$PATH:/home/z4/nix-config/home-manager/bin
+        /* export PATH=$PATH:/home/z4/nix-config/home-manager/bin */
       '';
 
 

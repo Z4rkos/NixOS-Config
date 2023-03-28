@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }:
 let
-  binDirectory = /home/z4/nix-config/home-manager/bin;
+  username = "z4";
+  binDirectory = /home/${username}/nix-config/home-manager/bin;
   storeLink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
@@ -22,14 +23,15 @@ in
 
 
   home = {
-    username = "z4";
-    homeDirectory = "/home/z4";
+    username = username;
+    homeDirectory = "/home/${username}";
 
     sessionVariables = {
       EDITOR = "nvim";
     };
-    sessionPath = ["${binDirectory}"]; # Put my bin in PATH
-    file."bin".source = storeLink /home/z4/nix-config/home-manager/bin; # Symlink that shizzle between store, here, and home.
+    # This stopped working when I stopped using SDDM.
+    sessionPath = [ "${binDirectory}" ]; # Put my bin in PATH
+    file."bin".source = storeLink binDirectory; # Symlink that shizzle between store, here, and home.
   };
 
   home.packages = with pkgs; [ 

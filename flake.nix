@@ -1,5 +1,5 @@
 {
-  description = "My currently shitty nixos config.";
+  description = "A somewhat functional and cool NixOS config.";
 
   inputs = {
     # Nixpkgs
@@ -14,10 +14,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     doom-emacs.url = "github:nix-community/nix-doom-emacs";
 
-    # TODO: Add any other flake you might need
-    # hardware.url = "github:nixos/nixos-hardware";
-#    rust-overlay.url = "github:oxalica/rust-overlay";
-# everything match nicely? Try nix-colors!
+    # rust-overlay.url = "github:oxalica/rust-overlay";
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 

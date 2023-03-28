@@ -5,5 +5,6 @@
     ./fonts.nix
     ./nvidia.nix
     ./hyprland.nix
+    ./intel.nix
   ];
 }
