@@ -1,17 +1,22 @@
-{ config, lib, pkgs, ... }: {
+{ config, ... }: {
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  /* boot.extraModprobeConfig = '' */
-  /*       options bbswitch load_state=-1 unload_state=1 nvidia-drm nvidia-uvm */
-  /*     ''; */
+
+  # LoL won't lauch if this is 1 on X
+  boot.kernelParams = if config.programs.hyprland.enable then [ "nvidia-drm.modeset=1" ] else [];
 
   hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      /* open = true; */
-      modesetting.enable = false;
+
+      # LoL won't lauch if this is true on X
+      modesetting.enable = if config.programs.hyprland.enable then true else false;
+
+      # Enable nvida-settings
       nvidiaSettings = true;
+
       #hardware.opengl.enable = true;
-      # boot.kernelParams = [ "module_blacklist=i915" ];
+
+      # Need this for dual monitor to work.
       prime = {
         sync.enable = true;
 

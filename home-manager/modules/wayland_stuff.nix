@@ -3,5 +3,7 @@
         waybar
         hyprpaper
         wofi
+        libsForQt5.qt5ct
+        libva
     ];
 }

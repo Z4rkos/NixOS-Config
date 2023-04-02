@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 # --- Border Stuff ---
 bspc config normal_border_color  '#1E1E2E'

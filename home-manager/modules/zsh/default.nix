@@ -1,9 +1,8 @@
 { inputs, lib, config, pkgs, ... }: {
   programs.zsh = {
       enable = true;
-      initExtra = ''
-        /* export PATH=$PATH:/home/z4/nix-config/home-manager/bin */
-      '';
+      /* initExtra = '' */
+      /* ''; */
 
 
       enableAutosuggestions = true;
@@ -15,7 +14,7 @@
           pwn_template = "cp ~/hackin/templates/pwn_template.py ./solve.py";
           gbd = "gef";
       };
-      #initExtra = "export PATH=$PATH:${binDirectory}";
+      initExtra = "export PATH=$PATH:/home/z4/bin";
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell";

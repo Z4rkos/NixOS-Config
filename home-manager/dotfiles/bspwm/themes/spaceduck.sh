@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 # --- Border Stuff ---
 bspc config normal_border_color  '#30365F'
@@ -13,9 +13,9 @@ bspc config border_width 2
 #kitty +kitten themes --reload-in=all Gruvbox Dark Hard &
 
 # --- Neovim ---
-echo "spaceduck2" > /home/z4/.current_theme 
+echo "spaceduck" > /home/z4/.current_theme &
 
 # --- Wallpaper and Color stuffs ---
-xwallpaper --center /home/z4/pictures/black_tech_bouble.jpg
+xwallpaper --center /home/z4/pictures/black_tech_bouble.jpg &
 
 

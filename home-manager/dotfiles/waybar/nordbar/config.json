@@ -6,25 +6,29 @@
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
-    // "modules-center": ["hyprland/window"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "battery#bat2", "clock", "tray"],
     "margin-left":10,
     "margin-top":3,
     // Modules configuration
 
-     "wlr/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": false,
-         "format": "{name}: {icon}",
-         "format-active": "{icon}",
-         "on-click": "activate",
-         "format-icons": {
-  
-             "urgent": "",
-             "active": "",
-             "default": ""
-         }
-     },
+  "wlr/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+          }
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,

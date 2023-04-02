@@ -3,7 +3,7 @@
   services.xserver = {
     enable = true;
     windowManager.bspwm.enable = true;
-    displayManager.sx = {
+    displayManager.startx = {
       enable = true;
     };
     autorun = false;

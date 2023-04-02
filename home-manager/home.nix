@@ -80,6 +80,8 @@ in
     neofetch
     libreoffice-qt
     mlocate
+    notify
+    libnotify
   ];
 
 

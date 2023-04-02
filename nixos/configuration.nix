@@ -1,4 +1,5 @@
-{ config, lib, pkgs, specialArgs, ... }: {
+{ config, lib, pkgs, specialArgs, ... }: 
+{
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -13,10 +14,28 @@
       ./modules
     ];
 
+
+
+  boot = {
+    # Would like to use this, but nvidia beta doenst like it.
+   # kernelPackages = pkgs.linuxPackages_latest;
+    /* "zswap.enabled=1" */
+  kernelParams = [
+
+    # MuQSS Stuff
+    "nohz_full=1"
+    "rcu_nocbs=0-7,8-15"
+    "muqss"
+    "quiet"
+    "splash"
+  ];
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
+    };
+  };
 
 
   # Set your time zone.
@@ -24,6 +43,9 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+      enabled = "fcitx5";
+  };
 
   # Enable CUPS to print documents.
   /* services.printing.enable = true; */
@@ -48,6 +70,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
+  services.dbus.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.z4 = {
     isNormalUser = true;
@@ -59,10 +83,17 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = { 
+    allowUnfree = true;
+    /* allowBroken = true; */
+  };
 
   
-  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl = {
+    enable = true;
+    /* nvidiaPackages = true; */
+    driSupport32Bit = true;
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -72,7 +103,7 @@
     wget
     git
     xdotool
-    picom
+    picom-jonaburg
     killall
     gnome.gnome-keyring # Required to make NetworkManager remember passwords...
     libsecret
@@ -81,6 +112,9 @@
     cargo
     ntfs3g # So I can mount ntfs
     glibc
+    libgccjit
+    binutils
+    nixos-option # For troubleshooting
   ];
 
   services.gnome.gnome-keyring.enable = true;
