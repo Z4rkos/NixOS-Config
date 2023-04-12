@@ -6,8 +6,7 @@ bspc config active_border_color  '#30365F'
 bspc config focused_border_color '#7a5ccc'
 bspc config border_width 2
 
-# --- Polybar ---
-/home/z4/.config/polybar/spaceduck/launch.sh &
+eww -c /home/z4/nix-config/home-manager/dotfiles/eww/bspwm_leftbar/ open-many bar_0 bar_1
 
 # --- Kitty ---
 #kitty +kitten themes --reload-in=all Gruvbox Dark Hard &

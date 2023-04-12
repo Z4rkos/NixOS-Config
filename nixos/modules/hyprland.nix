@@ -7,5 +7,4 @@
       };
       nvidiaPatches = true;
     };
-  /* lib.nix-doom-emacs.enable = true; */
 }

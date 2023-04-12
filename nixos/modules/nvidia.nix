@@ -3,13 +3,15 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   # LoL won't lauch if this is 1 on X
-  boot.kernelParams = if config.programs.hyprland.enable then [ "nvidia-drm.modeset=1" ] else [];
+  /* boot.kernelParams = [ "nvidia-drm.modeset=1" ]; */
 
+  /* hardware.opengl.enable = true; */
   hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
 
       # LoL won't lauch if this is true on X
-      modesetting.enable = if config.programs.hyprland.enable then true else false;
+      /* modesetting.enable = true; */
+
 
       # Enable nvida-settings
       nvidiaSettings = true;

@@ -20,5 +20,5 @@ fi
 
 # --- Launch Stuffs ---
 dunst &
-picom --experimental-backend --config /home/z4/.config/picom.conf &
+picom --config /home/z4/.config/picom.conf &
 sxhkd &

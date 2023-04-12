@@ -154,4 +154,4 @@ super + F2
 
 # Change language
 super + {shift} + c
-    /home/z4/.config/polybar/customModules/langSwitcher.sh
+    /home/z4/projects/langSwitcher.sh

@@ -28,6 +28,7 @@ in
 
     sessionVariables = {
       EDITOR = "nvim";
+      TEST = "test";
     };
     # This stopped working when I stopped using SDDM.
     sessionPath = [ "${binDirectory}" ]; # Put my bin in PATH
@@ -44,12 +45,12 @@ in
     nix-zsh-completions
     zsh-syntax-highlighting
     spotify
-    obsidian networkmanagerapplet
+    obsidian 
+    networkmanagerapplet
     ripgrep
     flameshot
     xwallpaper
     btop
-    eww
     dunst
     ranger
     links2
@@ -82,6 +83,14 @@ in
     mlocate
     notify
     libnotify
+    speedtest-cli
+    jq
+    socat
+    eww
+    aspino
+    blueman
+    virtualbox
+    vagrant
   ];
 
 

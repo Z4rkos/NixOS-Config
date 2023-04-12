@@ -1,0 +1,86 @@
+(defvar test "Plato")
+(defwindow example
+  :monitor 0
+  :geometry (geometry 
+    :x "0%"
+    :y "25px"
+    :width "20"
+    :height "30px"
+    :anchor "top right")
+
+  :stacking "fg"
+  :reserve (struts :distance "40px" :side "top")
+  :windowtype "dock"
+  :wm-ignore false
+
+  (box
+    (greeter :text "asdad" :name test)
+    (volume)
+  )
+)
+
+; Volume stuff
+(deflisten current_volume 'eww_volume')
+(defvar show_volume false)
+
+(defwidget volume []
+  (eventbox
+    :onhover "eww update show_volume=true"  
+    :onhoverlost "eww update show_volume=false"
+    (box
+      :halign "end"
+      :width 20
+      :spacing 0
+      :space-evenly false
+      ; :hexpand true
+      (slide-n-fade :bool show_volume :direction "left"
+        (scale
+          :orientation "h"
+          :flipped true
+          :value current_volume
+          :min 0
+          :max 151
+          :width 100
+          :onchange "eww_volume set {}"
+          :hexpand true
+        )
+      )
+      (label
+        :markup "  "
+        :style "margin: 2px; font-size: 20px;"
+      )
+    )
+  )
+)
+
+
+(defvar show false)
+(defwidget greeter [?text name]
+  (eventbox
+    :onhover "eww update show=true"  
+    :onhoverlost "eww update show=false"
+    (box
+      (slide-n-fade :bool show :direction "left"
+        (button 
+          :onclick "notify-send 'Hello' 'Hello, ${name}'"
+          text
+        )
+      )
+    current_volume)
+  )
+)
+
+; Combination of slide and fade revealer ⮯
+; See: https://elkowar.github.io/eww/widgets.html#revealer
+(defwidget slide-n-fade [direction bool]
+  (revealer
+    :transition "slide${direction}"
+    :reveal bool
+    (revealer
+      :transition "crossfade"
+      :reveal bool
+      (children)
+    )
+  )
+)
+

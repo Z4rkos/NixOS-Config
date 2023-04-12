@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+update_sink() {
+    sink=$(pacmd list-sinks | sed -n '/\* index:/ s/.*: //p')
+}
+
+print_volume() {
+    current_volume=$(pactl list sinks | grep -A 15 'Sink #' | grep 'Volume:' | head -n 1 | awk '{print $5}')
+    echo "${current_volume%?}"
+}
+
+volume_set() {
+    pactl set-sink-volume @DEFAULT_SINK@ $1%
+}
+
+volume_up() {
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+}
+
+volume_down() {
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+}
+
+mute() {
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+}
+
+
+listen() {
+    #print_volume
+
+    pactl subscribe | grep --line-buffered "sink" | while read -r event; do
+        if echo "$event" | grep -qv "Client"; then
+            print_volume
+        fi
+    done
+}
+print_volume
+
+case "$1" in
+    set)
+        volume_set "$2"
+        ;;
+    up)
+        volume_up
+        ;;
+    down)
+        volume_down
+        ;;
+    mute)
+        mute
+        ;;
+    *)
+        listen
+        ;;
+esac

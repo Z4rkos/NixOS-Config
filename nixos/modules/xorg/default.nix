@@ -8,9 +8,9 @@
     };
     autorun = false;
     exportConfiguration = true;
-    layout = "us,no";
+    /* layout = "us,no"; */
     xkbVariant = "";
-    xkbOptions = "grp:rctrl_rshift_toggle";
+    /* xkbOptions = "grp:rctrl_rshift_toggle"; */
 
     /* config = '' */
     /*   Section "Monitor" */

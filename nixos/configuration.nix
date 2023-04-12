@@ -26,6 +26,7 @@
     "nohz_full=1"
     "rcu_nocbs=0-7,8-15"
     "muqss"
+
     "quiet"
     "splash"
   ];
@@ -48,7 +49,12 @@
   };
 
   # Enable CUPS to print documents.
-  /* services.printing.enable = true; */
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hplip ];
+
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  
 
   # Enable sound.
   sound.enable = true;
@@ -103,7 +109,7 @@
     wget
     git
     xdotool
-    picom-jonaburg
+    picom
     killall
     gnome.gnome-keyring # Required to make NetworkManager remember passwords...
     libsecret
@@ -115,26 +121,18 @@
     libgccjit
     binutils
     nixos-option # For troubleshooting
+    brightnessctl
   ];
 
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
   services.gnome.gnome-keyring.enable = true;
 
   virtualisation.vmware.host.enable = true;
   virtualisation.docker.enable = true;
 
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "plato"; # Define your hostname.
-
-  networking.firewall.enable = true;
-  # Open ports in the firewall.
-  /* networking.firewall.allowedTCPPorts = [ 8000 9997 ]; */
-  /* networking.firewall.allowedUDPPorts = [ 9669 9997 ]; */
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
 
   security.sudo.extraRules = [

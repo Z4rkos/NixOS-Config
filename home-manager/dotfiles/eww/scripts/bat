@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+
+old_level=$(cat /sys/class/power_supply/BAT0/capacity)
+
+while true
+do
+  new_level=$(cat /sys/class/power_supply/BAT0/capacity)
+
+  if [ "$new_level" != "$old_level" ]
+  then
+    echo "$new_level%"
+
+    old_level=$new_level
+  fi
+
+  sleep 2
+done
+

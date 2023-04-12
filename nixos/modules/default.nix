@@ -6,5 +6,6 @@
     ./nvidia.nix
     ./hyprland.nix
     ./intel.nix
+    ./networking.nix
   ];
 }

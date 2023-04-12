@@ -16,4 +16,4 @@ configuration{
 
 //@theme "catppuccin-mocha"
 
-@theme "/home/z4/.local/share/rofi/themes/gruvbox.rasi"
+@theme "/home/z4/.local/share/rofi/themes/spaceduck.rasi"

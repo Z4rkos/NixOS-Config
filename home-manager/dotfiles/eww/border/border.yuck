@@ -1,0 +1,12 @@
+(defwindow top
+  :monitor 0
+  :geometry (geometry 
+    :x "0px"
+    :y "0%"
+    :width "35px"
+    :height "100%"
+    :anchor "center top")
+  :stacking "bg"
+
+
+)

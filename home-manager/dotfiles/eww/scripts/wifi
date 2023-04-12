@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+connected=$(nmcli con show --active | grep "wifi")
+
+if [ "$connected" ]; then
+  # echo "$(nmcli con show --active | sed -n 2p | cut -d ' ' -f1 | fold -w1 | tr ' ' '\n')"
+  echo ""
+else 
+  # echo "Disconnected" | fold -w1 | tr ' ' '\n'
+  # echo "t\ne\ns\nt"
+  echo ""
+fi

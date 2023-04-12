@@ -1,0 +1,180 @@
+$black: #000000;
+$white: #ffffff;
+$alpha: rgba(0, 0, 0, 0);
+
+$red: #e33400;
+$orange: #e39400;
+$green: #5ccc96;
+$yellow: #f2ce00;
+$purple: #b3a1e6;
+$purple2: #7a5ccc;
+$dark_purple: #30365f;
+$dark_purple2: #686f9a;
+$cyan: #00a3cc;
+$magenta: #ce6f8f;
+
+$bg: #0f111b;
+$bg2: #1b1c36;
+$bg3: #1a1b2a;
+$fg: #ecf0c1;
+$line: #16172d;
+
+* {
+  // all: unset;
+  font-family: "JetBrainsMono Nerd Font";
+  font-family: "DaddyTimeMono NF";
+}
+
+
+image {
+  color: blue;
+}
+
+circular-progress {
+  padding: 2px
+}
+
+button {
+  all: unset;
+}
+
+.bar_0, .bar_1 {
+  background-color: $bg3;
+  border-radius: 10px;
+}
+
+.bottom {
+  background-color: $bg;
+  border-radius: 10px;
+  padding-top: 5px;
+  margin: 1px;
+}
+.time {
+  background-color: $bg;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin: 1px;
+  font-size: 13px;
+  // margin: 4px;
+  label {
+    color: $purple;
+  }
+}
+
+.sys {
+  padding: 1px;
+  min-height: 70px;
+
+  label {
+    color: $fg;
+  }
+  .ram_progress, .cpu_progress {
+    background-color: $bg3;
+    font-size: 10px;
+    // min-width: 100%;
+    // min-height: 100%;
+  }
+  .ram_progress {
+    color: $red;
+  }
+  .cpu_progress {
+    color: $cyan;
+  }
+}
+
+
+.power_extended {
+  background-color: $bg3;
+  button {
+    margin-bottom: 5px;
+    color: $purple;
+    background-color: $bg;
+    font-size: 20px;
+  }
+  button:hover {
+    color: $white;
+    background-color: $bg2;
+  }
+}
+
+.power_icon {
+  padding: 2px 0;
+  font-size: 20px;
+  color: $red;
+}
+// .volume scale trough highlight {
+//   all: unset;
+//   border-radius: 24px;
+//   background-color: red;
+// }
+
+.volume, .brightness {
+  trough {
+    all: unset;
+    background-color: $bg2;
+    border-radius: 24px;
+    color: blue;
+  }
+  scale {
+    all: unset;
+    border-radius: 24px;
+    background-color: $bg;
+    margin: 0 10px;
+  }
+  highlight {
+    background-color: $cyan;
+    border-radius: 24px;
+    min-width: 14px;
+  }
+  slider {
+    color: black;
+    min-width: 10px;
+    border-radius: 5px;
+  }
+  label {
+    all: unset;
+  }
+}
+
+.brightness highlight {
+  background-color: $yellow;
+}
+
+.wifi {
+  color: $fg;
+}
+
+.works {
+  font-size: 20px;
+  font-weight: normal;
+  background-color: $bg;
+  border-radius: 10px;
+  margin: 4px;
+
+
+  /* All */
+  .0, .01, .02, .03, .04, .05, .06, .07, .08, .09, .00, .011, .022, .033, .044, .055, .066, .077, .088, .099, .000 {
+    all: unset;
+    margin: 5px 0;
+  }
+
+  /* Unoccupied */
+  .0 {
+  color: $dark_purple;
+  }
+
+  /* Occupied */
+  .01, .02, .03, .04, .05, .06, .07, .08, .09, .00 {
+    color: $purple;
+  }
+
+  /* Focused */
+  .011, .022, .033, .044, .055, .066, .077, .088, .099, .000 {
+    color: $purple2;
+  }
+}
+
+.sep {
+  background-color: $bg3;
+}
+
