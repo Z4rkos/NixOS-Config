@@ -9,7 +9,10 @@
     /*   source = storeLink "${dotfilesDir}/${name}"; */
     /* }) files; */
 
-      imports = [ ./doom-emacs ];
+      imports = [ 
+        ./doom-emacs 
+        ./nvim
+      ];
 
       home.file =  {
         # Dotfiles I change alot is managed non-atoically.

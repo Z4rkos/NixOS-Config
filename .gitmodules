@@ -1,0 +1,3 @@
+[submodule "home-manager/dotfiles/nvim"]
+	path = home-manager/dotfiles/nvim
+	url = /home/z4/nix-config/home-manager/dotfiles/nvim
