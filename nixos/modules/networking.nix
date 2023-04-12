@@ -3,11 +3,11 @@
 
   # Enable networking
   networking = {
-    networkmanager.enable = true;
     hostName = "plato";
-    wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-    routes = [
+    networkmanager.enable = true;
+
+    interfaces."vmnet8".ipv4.routes = [
       # pfSense route
       {
         address = "192.168.42.0";
@@ -18,7 +18,7 @@
 
     # Firewall
     firewall = {
-      enable = false;
+      enable = true;
     # Open ports in the firewall.
     /* allowedTCPPorts = [ 8000 9997 ]; */
     /* allowedUDPPorts = [ 9669 9997 ]; */
