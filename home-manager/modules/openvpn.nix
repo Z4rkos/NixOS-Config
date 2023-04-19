@@ -1,0 +1,6 @@
+{...}:
+{
+  services.openvpn.servers = {
+
+    };
+}

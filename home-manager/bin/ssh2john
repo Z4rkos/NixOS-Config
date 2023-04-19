@@ -1,0 +1,194 @@
+#!/nix/store/hhk4wr7hwry854sq69chmrjqyi964p7y-python3-3.10.9/bin/python
+
+# Copyright (C) 2012, Dhiru Kholia <dhiru@openwall.com>
+# Copyright (C) 2015, Dhiru Kholia <dhiru@openwall.com>
+#
+# Modified for JtR
+#
+# Copyright (C) 2011, Jeff Forcier <jeff@bitprophet.org>
+#
+# This file is part of ssh.
+#
+# 'ssh' is free software; you can redistribute it and/or modify it under the
+# terms of the GNU Lesser General Public License as published by the Free
+# Software Foundation; either version 2.1 of the License, or (at your option)
+# any later version.
+#
+# 'ssh' is distrubuted in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+# details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with 'ssh'; if not, write to the Free Software Foundation, Inc.,
+# 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+
+import sys;import site;import functools;sys.argv[0] = '/nix/store/6dhkyww38ymw938wp3wik1a6300mzw1k-john-1.9.0-jumbo-1/bin/ssh2john.py';functools.reduce(lambda k, p: site.addsitedir(p, k), ['/nix/store/cwj8jf6mbzf5a6fbb0q0xz8n3155sgzs-python3.10-dpkt-1.9.8/lib/python3.10/site-packages','/nix/store/8ll6j9gxw8766gaw26aailrpwmafnmhf-python3.10-scapy-2.4.5/lib/python3.10/site-packages','/nix/store/8scykbi3vnxaqly1zwr6wvr85dwp6j53-python3.10-pycrypto-3.15.0/lib/python3.10/site-packages','/nix/store/c06s4hziv8ny02pj2aay478zwmmldc9r-python3.10-pycryptodome-3.15.0/lib/python3.10/site-packages','/nix/store/pngkv2jzw5cjq1hspidg8yn2xagrpipz-python3.10-ecdsa-0.18.0/lib/python3.10/site-packages','/nix/store/y4kd6ws4xbpppm6digfd5bdxfdgwgl2p-python3.10-six-1.16.0/lib/python3.10/site-packages','/nix/store/s9ngzjwb1h9hc93in5bn9wvq7hzp6kip-python3.10-ipython-8.4.0/lib/python3.10/site-packages','/nix/store/hd8z8l930mzz7agzv6a94bbz0hzrdmvq-python3.10-backcall-0.2.0/lib/python3.10/site-packages','/nix/store/8mgdhrbjs3jlq27ivcm1gqv6rwqpxvx8-python3.10-decorator-5.1.1/lib/python3.10/site-packages','/nix/store/693ab21hxlz45piq6imgfy4k6y464cv5-python3.10-jedi-0.18.1/lib/python3.10/site-packages','/nix/store/dwg93rlcr1ygm3gkvij9j63k1f6205l6-python3.10-parso-0.8.3/lib/python3.10/site-packages','/nix/store/pkbvaqkb9gilp6r4qrgzkjc99mvbv5rb-python3.10-matplotlib-inline-0.1.6/lib/python3.10/site-packages','/nix/store/208padbm4dcla6vydn89x8ryg4dfaw54-python3.10-traitlets-5.4.0/lib/python3.10/site-packages','/nix/store/4vxr46y7dbgf9kbgqwhqyqqwnx8sfnsb-python3.10-ipython_genutils-0.2.0/lib/python3.10/site-packages','/nix/store/42m23152m102cw29853r6fdm5a8rszbj-python3.10-pexpect-4.8.0/lib/python3.10/site-packages','/nix/store/c807b7wswxz1fvmnm6pfkk9zgik9pxvk-python3.10-ptyprocess-0.7.0/lib/python3.10/site-packages','/nix/store/606wiji9yssi2dhla4g479h4fj6l1s9v-python3.10-pickleshare-0.7.5/lib/python3.10/site-packages','/nix/store/v3132ywincnrpdcq9njmv696jgc9yarj-python3.10-path-16.4.0/lib/python3.10/site-packages','/nix/store/0gv1ghi5hhs9a58gvh08n4kf5dz4kjwa-python3.10-prompt-toolkit-3.0.31/lib/python3.10/site-packages','/nix/store/98819ln7y28xjq1w8zk3s18gqgicwclf-python3.10-wcwidth-0.2.5/lib/python3.10/site-packages','/nix/store/hxxar95d0pg8hzgwlp31xa8d6pi1frdb-python3.10-setuptools-65.3.0/lib/python3.10/site-packages','/nix/store/jl9619fywy9k66658d7fwawpyqb0s260-python3.10-pygments-2.13.0/lib/python3.10/site-packages','/nix/store/ymg3k4fpwjcq5f6x3z7lmr6ga2rxhmk5-python3.10-docutils-0.19/lib/python3.10/site-packages','/nix/store/5adz748byk3yc9swmdq1774ywvipf9vk-python3.10-stack-data-0.2.0/lib/python3.10/site-packages','/nix/store/8sc4ah87jxkmk3rg2vkqsr8vljw6hbh3-python3.10-asttokens-2.0.8/lib/python3.10/site-packages','/nix/store/cjxpv619pffj2x0s311fgh82n78a0k60-python3.10-executing-0.8.2/lib/python3.10/site-packages','/nix/store/867mhy9ml887ijdq54y0bbdqap27khpg-python3.10-pure_eval-0.2.2/lib/python3.10/site-packages','/nix/store/hjpslz7bnbimkizz5xjrrj7c2gnkcyki-python3.10-toml-0.10.2/lib/python3.10/site-packages','/nix/store/2fjvdy0sim5a6ydq8ljb4ffgz2yb1kjd-python3.10-cryptography-38.0.1/lib/python3.10/site-packages','/nix/store/vda8jzawj0abhd6nfk2b20rjk5pns6kv-python3.10-cffi-1.15.1/lib/python3.10/site-packages','/nix/store/wxlk0jd57nsk3idf2k231lrrpl7r833h-python3.10-pycparser-2.21/lib/python3.10/site-packages','/nix/store/hqzxza7x5pqj3agaaisrbnbflyyq9f3z-python3.10-matplotlib-3.5.3/lib/python3.10/site-packages','/nix/store/vf990ikvl50h1jjrpi6qpfbv5az3nx19-python3.10-certifi-2022.12.07/lib/python3.10/site-packages','/nix/store/n0wikjfmcpdrr1kqlnjbzwgvvpl0cvgl-python3.10-cycler-0.11.0/lib/python3.10/site-packages','/nix/store/vmh3bpfbidqk8rd70pvpd36spj0xrlsz-python3.10-fonttools-4.34.4/lib/python3.10/site-packages','/nix/store/s6pyi9cliwzfllx7yjl4ggmghv16mjxc-python3.10-kiwisolver-1.4.4/lib/python3.10/site-packages','/nix/store/51sgp03frk7wgpf7mzndy7xkd8b3iqm2-python3.10-mock-4.0.3/lib/python3.10/site-packages','/nix/store/hh5g69ahp9kxz8cdn5dzizsf9iss3w8c-python3.10-numpy-1.23.3/lib/python3.10/site-packages','/nix/store/xk1qs6x9i5z0x13cxgia0l0y18c9l9jd-python3.10-packaging-21.3/lib/python3.10/site-packages','/nix/store/hsbf8qilhkf1fbx0rhdv83sph2mc8bxk-python3.10-pyparsing-3.0.9/lib/python3.10/site-packages','/nix/store/zli7f8c28j9a6vr67np9km0sdh0wkzmz-python3.10-pillow-9.3.0/lib/python3.10/site-packages','/nix/store/dn2z396b3klyy9fcg5dpa996ckhrwc00-python3.10-olefile-0.46/lib/python3.10/site-packages','/nix/store/z7ghfa5xsagqafwcpid8b5qcpnpjvwjk-python3.10-defusedxml-0.7.1/lib/python3.10/site-packages','/nix/store/mskknh896cbix54gdd8qdrbzw5cxps98-python3.10-python-dateutil-2.8.2/lib/python3.10/site-packages','/nix/store/alhf9nralzc78qdmrmlh0s6z2gkijxp1-python3.10-pytz-2022.2.1/lib/python3.10/site-packages','/nix/store/3gagb48g52hrwranv4jzqr1cb165vbdx-python3.10-tornado-6.2/lib/python3.10/site-packages','/nix/store/0lxdvrzpvf3qndw7j2h93lws1b6qggsg-python3.10-tkinter-3.10.9/lib/python3.10/site-packages','/nix/store/b5wvlang7w8p0nal98fh0j9l0sfqhafj-python3.10-lxml-4.9.1/lib/python3.10/site-packages'], site._init_pathinfo());
+import base64
+import sys
+import binascii
+from struct import unpack
+
+DES3 = 0
+AES = 1
+AES_256 = 2
+# known encryption types for private key files:
+CIPHER_TABLE = {
+    'AES-128-CBC': {'cipher': AES, 'keysize': 16, 'blocksize': 16, 'mode': "AES.MODE_CBC"},
+    'DES-EDE3-CBC': {'cipher': DES3, 'keysize': 24, 'blocksize': 8, 'mode': "DES3.MODE_CBC"},
+    'AES-256-CBC': {'cipher': AES_256, 'keysize': 32, 'blocksize': 16, 'mode': "AES.MODE_CBC"},
+    'AES-192-CBC': {'cipher': AES, 'keysize': 24, 'blocksize': 16, 'mode': "AES.MODE_CBC"},
+}
+
+
+def read_private_key(filename):
+    """
+    Read an SSH2-format private key file, looking for a string of the type
+    C{"BEGIN xxx PRIVATE KEY"} for some C{xxx}, base64-decode the text we
+    find, and return it as a string.
+    """
+    try:
+        f = open(filename, 'r')
+    except IOError:
+        e = sys.exc_info()[1]
+        sys.stdout.write("%s\n" % str(e))
+        return
+
+    lines = f.readlines()
+    all_lines = ''.join(lines)
+    ktype = -1
+    tag = None
+    if "BEGIN RSA PRIVATE" in all_lines:
+        tag = "RSA"
+        ktype = 0
+    elif "-----BEGIN OPENSSH PRIVATE KEY-----" in all_lines:
+        # new private key format for OpenSSH (automatically enabled for
+        # keys using ed25519 signatures), ed25519 stuff is not supported
+        # yet!
+        ktype = 2  # bcrypt pbkdf + aes-256-cbc
+        tag = "OPENSSH"
+    elif "-----BEGIN DSA PRIVATE KEY-----" in all_lines:
+        ktype = 1
+        tag = "DSA"
+    elif "-----BEGIN EC PRIVATE KEY-----" in all_lines:
+        ktype = 3
+        tag = "EC"
+
+    if not tag:
+        sys.stderr.write("[%s] couldn't parse keyfile\n" % filename)
+        return
+
+    start = 0
+    while (start < len(lines)) and ((lines[start].strip() != '-----BEGIN ' + tag + ' PRIVATE KEY-----') and (lines[start].strip() != '-----BEGIN OPENSSH PRIVATE KEY-----')):
+        start += 1
+    if start >= len(lines):
+        sys.stderr.write("%s is not a valid private key file\n" % f.name)
+        return
+
+    # parse any headers first
+    headers = {}
+    start += 1
+    while start < len(lines):
+        l = lines[start].split(': ')
+        if len(l) == 1:
+            break
+        headers[l[0].lower()] = l[1].strip()
+        start += 1
+    # find end
+    end = start
+    while (lines[end].strip() != '-----END ' + tag + ' PRIVATE KEY-----') and (end < len(lines)):
+        end += 1
+    # if we trudged to the end of the file, just try to cope.
+    try:
+        data = ''.join(lines[start:end]).encode()
+        data = base64.decodebytes(data)
+    except base64.binascii.Error:
+        e = sys.exc_info()[1]
+        raise Exception('base64 decoding error: ' + str(e))
+
+    if 'proc-type' not in headers and ktype != 2:  # unencrypted key file?
+        sys.stderr.write("%s has no password!\n" % f.name)
+        return None
+
+    try:
+        encryption_type, saltstr = headers['dek-info'].split(',')
+    except:
+        if ktype != 2:
+            raise Exception('Can\'t parse DEK-info in private key file')
+        else:
+            encryption_type = "AES-256-CBC"
+            saltstr = "fefe"  # dummy value, not used
+    if encryption_type not in CIPHER_TABLE:
+        raise Exception('Unknown private key cipher "%s"' % encryption_type)
+
+    cipher = CIPHER_TABLE[encryption_type]['cipher']
+    keysize = CIPHER_TABLE[encryption_type]['keysize']
+    # mode = CIPHER_TABLE[encryption_type]['mode']
+    salt = binascii.unhexlify(saltstr)
+    AUTH_MAGIC = b"openssh-key-v1"
+    if ktype == 2:  # bcrypt_pbkdf format, see "sshkey_private_to_blob2" in sshkey.c
+        salt_length = 16  # fixed value in sshkey.c
+        # find offset to salt
+        offset = 0
+        if not data.startswith(AUTH_MAGIC):
+            raise Exception('Missing AUTH_MAGIC!')
+        offset = offset + len(AUTH_MAGIC) + 1  # sizeof(AUTH_MAGIC)
+        length = unpack(">I", data[offset:offset+4])[0]  # ciphername length
+        if length > 32:  # weak sanity check
+            raise Exception('Unknown ciphername!')
+        offset = offset + 4 + length
+        length = unpack(">I", data[offset:offset+4])[0]  # kdfname length
+        offset = offset + 4 + length
+        length = unpack(">I", data[offset:offset+4])[0]  # kdf length
+        salt_offset = offset + 4 + 4  # extra "4" to skip over salt length field
+        # print(salt_offset)  # this should be 47, always?
+        # find offset to check bytes
+        offset = offset + 4 + length  # number of keys
+        offset = offset + 4  # pubkey blob
+        length = unpack(">I", data[offset:offset+4])[0]  # pubkey length
+        offset = offset + 4 + length
+        offset = offset + 4  # skip over length of "encrypted" blob
+        if offset > len(data):
+            raise Exception('Internal error in offset calculation!')
+        ciphertext_begin_offset = offset
+        saltstr = data[salt_offset:salt_offset+salt_length].encode("hex")
+        # rounds value appears after salt
+        rounds_offset = salt_offset + salt_length
+        rounds = data[rounds_offset: rounds_offset+4]
+        rounds = unpack(">I", rounds)[0]
+        if rounds == 0:
+            rounds == 16
+
+    data = binascii.hexlify(data).decode("ascii")
+    if keysize == 24 and encryption_type == "AES-192-CBC" and (ktype == 0 or ktype == 1):  # RSA, DSA keys using AES-192
+        hashline = "%s:$sshng$%s$%s$%s$%s$%s" % (f.name, 4, len(saltstr) // 2,
+            saltstr, len(data) // 2, data)
+    elif keysize == 32 and encryption_type == "AES-256-CBC" and (ktype == 0 or ktype == 1):  # RSA, DSA keys using AES-256
+        hashline = "%s:$sshng$%s$%s$%s$%s$%s" % (f.name, 5, len(saltstr) // 2,
+            saltstr, len(data) // 2, data)
+    elif keysize == 24:
+        hashline = "%s:$sshng$%s$%s$%s$%s$%s" % (f.name, 0,  # 0 -> 3DES
+            len(salt), saltstr, len(data) // 2, data)
+    elif keysize == 16 and (ktype == 0 or ktype == 1):  # RSA, DSA keys using AES-128
+        hashline = "%s:$sshng$%s$%s$%s$%s$%s" % (f.name, 1, len(saltstr) // 2,
+            saltstr, len(data) // 2, data)
+    elif keysize == 16 and ktype == 3:  # EC keys using AES-128
+        hashline = "%s:$sshng$%s$%s$%s$%s$%s" % (f.name, 3, len(saltstr) // 2,
+            saltstr, len(data) // 2, data)
+    elif keysize == 32 and ktype == 2:  # bcrypt pbkdf + aes-256-cbc
+        hashline = "%s:$sshng$%s$%s$%s$%s$%s$%d$%d" % (f.name, 2, len(saltstr) // 2,
+            saltstr, len(data) // 2, data, rounds, ciphertext_begin_offset)
+    else:
+        sys.stderr.write("%s uses unsupported cipher, please file a bug!\n" % f.name)
+        return None
+
+    sys.stdout.write("%s\n" % hashline)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        sys.stdout.write("Usage: %s <RSA/DSA/EC/OpenSSH private key file(s)>\n" %
+                         sys.argv[0])
+
+    for filename in sys.argv[1:]:
+        read_private_key(filename)

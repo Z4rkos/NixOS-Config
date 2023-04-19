@@ -11,7 +11,7 @@
 
       imports = [ 
         ./doom-emacs 
-        /* ./nvim */
+        /* ./nvim-nix */
       ];
 
       home.file =  {

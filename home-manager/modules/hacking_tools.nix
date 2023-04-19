@@ -29,5 +29,6 @@
         sqlmap
         jwt-hack
         hash-identifier
+        exploitdb
     ];
 }

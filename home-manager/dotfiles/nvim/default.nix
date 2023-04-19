@@ -1,20 +1,26 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   # other configuration options
   programs.neovim = {
     enable = true;
-    extraConfig = "/home/z4/nix-config/home-manager/dotfiles/nvim";
+    /* package = pkgs.neovim-nightly; */
+    /* extraConfig = "/home/z4/nix-config/home-manager/dotfiles/nvim"; */
+    extraConfig = ''
+    '';
     extraPackages = with pkgs; [
       vimPlugins.nvim-treesitter.withAllGrammars
     ];
-    /* config = { */
-    /*   "init.vim".source = "${config.programs.neovim.extraConfig}/init.lua"; */
-    /*   # other Neovim configuration options */
-    /* }; */
+    plugins = with pkgs.vimPlugins; [
+      indentLine
+      nvim-tree-lua
+      nvim-web-devicons
+
+      nvim-treesitter
+    ];
   };
-  home.file = {
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/nvim;
-  };
+  /* home.file = { */
+  /*   ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /home/z4/nix-config/home-manager/dotfiles/nvim; */
+  /* }; */
 }
 

@@ -8,6 +8,10 @@
       pwntools
       termcolor
       pyjwt
+      impacket
+      pyasn1
+      pycrypto
+      configparser
       ];
   in
   {

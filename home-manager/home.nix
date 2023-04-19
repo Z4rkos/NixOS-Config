@@ -36,14 +36,14 @@ in
   };
 
   home.packages = with pkgs; [ 
+    (callPackage  /home/z4/testing/poetry_test {})
+    (callPackage /home/z4/projects/centipyde {})
     rofi
     vimHugeX
     polybar
     kitty
     feh
     lua
-    nix-zsh-completions
-    zsh-syntax-highlighting
     spotify
     obsidian 
     networkmanagerapplet
@@ -71,26 +71,28 @@ in
     openvpn
     p7zip
     unrar
-    rarcrack
     dig
     powershell
     php
     vlc
     node2nix
-    conky
     neofetch
     libreoffice-qt
     mlocate
     notify
     libnotify
-    speedtest-cli
     jq
     socat
     eww
     aspino
     blueman
-    virtualbox
-    vagrant
+    gnumake
+    qbittorrent
+    osu-lazer
+    tree-sitter
+    rnix-lsp
+    pandoc
+    bat
   ];
 
 

@@ -26,7 +26,6 @@
     "nohz_full=1"
     "rcu_nocbs=0-7,8-15"
     "muqss"
-
     "quiet"
     "splash"
   ];
@@ -49,11 +48,11 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplip ];
+  /* services.printing.enable = true; */
+  /* services.printing.drivers = [ pkgs.hplip ]; */
 
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  /* services.avahi.enable = true; */
+  /* services.avahi.nssmdns = true; */
   
 
   # Enable sound.
@@ -124,10 +123,10 @@
     brightnessctl
   ];
 
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
-  };
+  /* services.clamav = { */
+  /*   daemon.enable = true; */
+  /*   updater.enable = true; */
+  /* }; */
   services.gnome.gnome-keyring.enable = true;
 
   virtualisation.vmware.host.enable = true;

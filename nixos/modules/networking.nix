@@ -18,7 +18,7 @@
 
     # Firewall
     firewall = {
-      enable = true;
+      enable = false;
     # Open ports in the firewall.
     /* allowedTCPPorts = [ 8000 9997 ]; */
     /* allowedUDPPorts = [ 9669 9997 ]; */

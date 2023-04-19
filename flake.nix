@@ -5,6 +5,7 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    /* nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; */
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -14,6 +15,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     doom-emacs.url = "github:nix-community/nix-doom-emacs";
 
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     # rust-overlay.url = "github:oxalica/rust-overlay";
     # nix-colors.url = "github:misterio77/nix-colors";
   };
@@ -21,9 +23,10 @@
   outputs = { 
     nixpkgs, 
     home-manager, 
-    unstable, 
+    /* unstable, */ 
     hyprland, 
     doom-emacs, 
+    neovim-nightly,
     ... 
     }@inputs: {
       # NixOS configuration entrypoint
