@@ -93,6 +93,12 @@ in
     rnix-lsp
     pandoc
     bat
+    gcc_multi
+    helix
+    nodePackages.typescript-language-server
+    nodePackages.bash-language-server
+    rust-analyzer
+    remmina
   ];
 
 
